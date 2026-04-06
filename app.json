@@ -9,7 +9,9 @@
       "image": "./assets/splash-icon.png"
     },
     "web": {
-      "bundler": "metro",
+      "bundler": "metro"
+    },
+    "experiments": {
       "baseUrl": "/exercise-app"
     },
     "android": {
