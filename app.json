@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "Exercise Tracker",
+    "slug": "exercise-app",
+    "version": "1.0.0",
+    "platforms": ["ios", "android", "web"],
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash-icon.png"
+    },
+    "web": {
+      "bundler": "metro",
+      "baseUrl": "/exercise-app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png"
+      }
+    }
+  }
+}
