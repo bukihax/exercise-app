@@ -27,8 +27,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npx expo export --platform web",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npx expo export --platform web && node -e \"require('fs').writeFileSync('dist/.nojekyll', '')\"",
+    "deploy": "gh-pages -d dist --dotfiles"
   },
   "eslintConfig": {
     "extends": [
