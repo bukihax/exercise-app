@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, View, Text, StyleSheet } from 'react-native';
+import { ScrollView, View, Text, StyleSheet } from 'react-native';
 import { Button } from '@rneui/themed';
 import exercises from '../../data/exercises';
 
@@ -9,25 +9,22 @@ function getScreenName(type) {
 
 export default function Home({ navigation }) {
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Exercise Tracker</Text>
-      <FlatList
-        data={exercises}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <Button
-            title={item.name}
-            onPress={() =>
-              navigation.navigate(getScreenName(item.type), {
-                exercise: item,
-                exercises,
-              })
-            }
-            containerStyle={styles.buttonContainer}
-          />
-        )}
-      />
-    </View>
+      {exercises.map((item) => (
+        <Button
+          key={item.id}
+          title={item.name}
+          onPress={() =>
+            navigation.navigate(getScreenName(item.type), {
+              exercise: item,
+              exercises,
+            })
+          }
+          containerStyle={styles.buttonContainer}
+        />
+      ))}
+    </ScrollView>
   );
 }
 
