@@ -8,6 +8,17 @@ import DurationExercise from './src/components/DurationExercise';
 
 const Stack = createNativeStackNavigator();
 
+const linking = {
+  prefixes: ['https://bukihax.github.io', 'http://localhost'],
+  config: {
+    screens: {
+      Home: '',
+      RepetitionExercise: 'repetition',
+      DurationExercise: 'duration',
+    },
+  },
+};
+
 class ErrorBoundary extends React.Component {
   state = { error: null };
   static getDerivedStateFromError(error) {
@@ -29,7 +40,7 @@ class ErrorBoundary extends React.Component {
 export default function App() {
   return (
     <ErrorBoundary>
-      <NavigationContainer>
+      <NavigationContainer linking={linking}>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
             name="Home"
