@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { Button } from '@rneui/themed';
 import exercises from '../../data/exercises';
 
@@ -9,7 +9,7 @@ function getScreenName(type) {
 
 export default function Home({ navigation }) {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.title}>Exercise Tracker</Text>
       {exercises.map((item) => (
         <Button
@@ -24,13 +24,12 @@ export default function Home({ navigation }) {
           containerStyle={styles.buttonContainer}
         />
       ))}
-    </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     padding: 20,
   },
   title: {

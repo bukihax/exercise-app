@@ -1,12 +1,13 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/components/Home';
 import RepetitionExercise from './src/components/RepetitionExercise';
 import DurationExercise from './src/components/DurationExercise';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const linking = {
   prefixes: ['https://bukihax.github.io', 'http://localhost'],
